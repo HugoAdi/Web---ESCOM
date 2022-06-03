@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0%;
+    -webkit-animation-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("./imagenes/home.jfif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 1em;
+}
+
+#contenedor{
+    height: 900px;
+    position: relative;
+}
+#contenido{
+    height: 700px;
+}
+#aside{
+    position: relative;
+    float: right;
+    width: 35%;
+    height: 550px;
+}
+
+#section{
+    position: relative;
+    float: left;
+    width: 65%;
+}
+
+
+
+#articulo {
+    width: 500px;
+    height: 450px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    opacity: .8;
+}
+
+#login {
+    position: absolute;
+    background: #fff;
+    height: 600px;
+    border: 2px solid #ccc;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    opacity: .9;
+}
+
+#login>a{
+    text-align: center;
+}
+
+h2,h3 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    text-align: justify;
+}
+
+input {
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+select{
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 18px;
+    padding: 10px;
+}
+
+button {
+    background: #555;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 170px;
+}
+
+button:hover {
+    opacity: .7;
+}
+
+#footer {
+    margin-top: 45px;
+    padding: 20px;
+    background-color: black;
+    width: 100%;
+    height: 110px;
+    border-radius: 1em;
+}
+
+
+
+#footer>p{
+    text-align: left;
+    font-family: Arial;
+    color: #fff;
+    padding: 2em;
+    font-size: 1em;
+}
+
+.error {
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
