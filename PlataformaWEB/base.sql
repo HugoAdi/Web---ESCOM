@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2022 a las 08:02:55
+-- Tiempo de generación: 03-06-2022 a las 06:45:15
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -12,7 +12,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Base de datos: `plataforma_educativa`
+-- Base de datos: `base`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,8 @@ CREATE TABLE `actividad` (
 --
 
 CREATE TABLE `administrador` (
-  `No.empleado` int(11) NOT NULL
+  `Id` int(10) NOT NULL,
+  `No.empleado` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -56,7 +57,7 @@ CREATE TABLE `agenda` (
 --
 
 CREATE TABLE `alumno` (
-  `Id` int(11) NOT NULL,
+  `Id` int(10) NOT NULL,
   `Progreso` decimal(10,0) NOT NULL,
   `Tutor` int(11) NOT NULL,
   `Boleta` int(11) NOT NULL,
@@ -82,10 +83,10 @@ CREATE TABLE `bloque` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Grupo`
+-- Estructura de tabla para la tabla `grupo`
 --
 
-CREATE TABLE `Grupo` (
+CREATE TABLE `grupo` (
   `Id` int(11) NOT NULL,
   `Id_bloque` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -98,7 +99,13 @@ CREATE TABLE `Grupo` (
 
 CREATE TABLE `material` (
   `Id` int(11) NOT NULL,
-  `Nombre` text NOT NULL
+  `Nombre` text NOT NULL,
+  `Tema` text NOT NULL,
+  `Tipo` text NOT NULL,
+  `Estatus` text NOT NULL,
+  `Atendida` text DEFAULT NULL,
+  `Observacion` text DEFAULT NULL,
+  `Archivo` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -108,7 +115,8 @@ CREATE TABLE `material` (
 --
 
 CREATE TABLE `profesor` (
-  `No.empleado` int(11) NOT NULL,
+  `Id` int(10) NOT NULL,
+  `No.empleado` int(10) NOT NULL,
   `Id_grupo` int(11) NOT NULL,
   `Id_agenda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -120,11 +128,11 @@ CREATE TABLE `profesor` (
 --
 
 CREATE TABLE `usuario` (
-  `Id` int(11) NOT NULL,
+  `Id` int(10) NOT NULL,
   `Nombre` text NOT NULL,
   `Nombre_usuario` text NOT NULL,
   `Contraseña` varchar(8) NOT NULL,
-  `Telefono` int(11) NOT NULL,
+  `Telefono` int(10) NOT NULL,
   `CURP` varchar(18) NOT NULL,
   `Correo_electronico` text NOT NULL,
   `Correo_electronico_alterno` text NOT NULL
@@ -144,7 +152,7 @@ ALTER TABLE `actividad`
 -- Indices de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`No.empleado`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `agenda`
@@ -165,9 +173,9 @@ ALTER TABLE `bloque`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indices de la tabla `Grupo`
+-- Indices de la tabla `grupo`
 --
-ALTER TABLE `Grupo`
+ALTER TABLE `grupo`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -180,12 +188,43 @@ ALTER TABLE `material`
 -- Indices de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  ADD PRIMARY KEY (`No.empleado`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`Id`);
-COMMIT;
 
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  ADD CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `usuario` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `usuario` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `profesor`
+--
+ALTER TABLE `profesor`
+  ADD CONSTRAINT `profesor_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `usuario` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
