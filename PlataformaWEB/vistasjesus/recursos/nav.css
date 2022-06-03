@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0%;
+    -webkit-animation-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    border-radius: 1em;
+    justify-content: space-evenly;
+}
+
+nav p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
+    float: left;
+    padding: 18px 100px;
+}
+
+nav ul {
+    height: 80px;
+    width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+    float: left;
+    list-style: none;
+    position: relative;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+nav ul li a {
+    margin-top: 20px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+nav ul li ul {
+    display: none;
+    width: 250px;
+    height: 170px;
+    position: relative;
+    background-color: black;
+    border-radius: 0px 0px 5px 5px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    float: left;
+    width: auto;
+    text-align: left;
+    border-radius: 4px;
+}
+
+nav ul li ul a {
+    text-align: left;
+    float: left;
+}
+
+nav ul li ul a:hover {
+    background-color: goldenrod;
+}
+
+form {
+    width: 500px;
+    height: 450px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    margin: auto;
+    margin-top: 150px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+input {
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 18px;
+    padding: 10px;
+}
+
+button {
+    float: right;
+    background: #555;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+button:hover {
+    opacity: .7;
+}
+
+.error {
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
