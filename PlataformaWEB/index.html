@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <link rel="stylesheet" type="text/css" href="./recursos/index.css">
+        <link rel="stylesheet" type="text/css" href="./recursos/nav.css">
+        <link rel="stylesheet" type="text/css" href="./recursos/header.css">
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="header">
+                <h1>AQUI VA UN TITULO BONITO CON UN LOGO BONITO</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href = "index.html">Pagina Principal</a></li>
+                    <li><a href = "acerca.html">Acerca de</a>
+                        <ul>
+                            <li><a href = "acerca2.html">Alumno</a></li>
+                            <li><a href = "acerca3.html">Docente</a></li>
+                            <li><a href = "acerca4.html">Administrador</a></li>
+                        </ul>
+                    </li>
+                    <li><a href = "PF.html">Preguntas frecuentes</a></li>
+                    <li><a href = "contacto.html">Contacto</a></li>
+                    <li><a href = "ayuda.html">Ayuda</a>
+                        <ul>
+                        <li><a href = "ayuda2.html">Alumno</a></li>
+                        <li><a href = "ayuda3.html">Docente</a></li>
+                        <li><a href = "ayuda4.html">Administrador</a></li>
+                        </ul>  
+                    </li>
+                </ul>
+            </nav>
+            <div id="contenido">
+                <div id="section">
+                    <div id="articulo">
+                        <h2>PROYECTO<br>TECWEB</h2>
+                        <p>Esta página web fue elaborado para cumplir con el anhelo compartido de
+                            que en el país se ofrezca una educación con equidad y calidad, en la que
+                            todos los alumnos aprendan, sin importar su origen, su condición personal,
+                            económica o social, y en la que se promueva una formación centrada en
+                            la dignidad humana, la solidaridad, el amor a la patria, el respeto y cuidado
+                            de la salud, así como la preservación del medio ambiente. </p>
+                    </div>
+                </div>
+                <div id="aside">
+                    <form action = "includes/login_alumno_inc.php" method = "post" id="login">
+                        <h2>Inicio de sesion</h2>
+                        <label>Usuario</label>
+                        <input type = "text" name = "uid" placeholder = "Usuario / Email"><br>
+                        <label>Contraseña</label>
+                        <input type = "password" name = "pwd" placeholder = "Contraseña"><br>
+                        <label>Tipo de usuario</label>
+                        <select name="Usuarios" id="tipo_Usuarios">
+                            <option value="alumno">Alumno</option>
+                            <option value="profesor">Profesor</option>
+                            <option value="administrador">Administrador</option>
+                        </select> <br>
+                        <button type = "submit" name = "submit">Iniciar sesión</button><br><br><br><br>
+                        <a href="">¿No tienes cuenta? ¡Registrate aqui!</a><br><br>
+                        <a href="">¿Olvidaste tu contraseña?</a>
+                    </form>
+                </div>
+            </div>
+            <div id="footer">
+                <p>Copyright@2022 Equipo 5 2CV11 | R Todos los derechos reservados</p>
+            </div>
+        </div>
+    </body>
+</html>
