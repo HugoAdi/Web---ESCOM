@@ -60,7 +60,7 @@ ul, ol {
 }
 
 .nav li ul li ul {
-    left:230px;
+    right:-140px;
     top:0px;
     position: absolute;
 }
