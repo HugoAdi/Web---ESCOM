@@ -7,6 +7,12 @@
     font-family: sans-serif;
 }
 
+.contenedor1 {
+    height: 80rem;
+    width: 120rem;
+    margin: auto;
+    margin-top: 5rem;
+}
 body {
     background-image: url("./imagenes/home.jfif");
     background-position: center;
@@ -15,7 +21,9 @@ body {
     margin: 0px;
     padding: 1em;
 }
-
+form{
+    height: 1605px;
+}
 #contenedor{
     height: 1200px;
     position: relative;
@@ -26,7 +34,7 @@ body {
 
 #articulo {
     width: 1200px;
-    height: 800px;
+    height: 900px;
     padding: 30px;
     background: #fff;
     border-radius: 15px;
@@ -34,7 +42,7 @@ body {
     margin: auto;
     margin-top: 4em;
     margin-bottom: 4em;
-    opacity: .8;
+    opacity: .9;
 }
 
 .informacion{
@@ -93,9 +101,10 @@ button {
     background: #555;
     color: #fff;
     border-radius: 5px;
-    position: absolute;
+    position: relative;
     margin-left: 170px;
 }
+
 
 button:hover {
     opacity: .7;

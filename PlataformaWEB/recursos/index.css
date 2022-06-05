@@ -33,13 +33,11 @@ body {
 #section{
     position: relative;
     float: left;
-    width: 65%;
+    width: 35%;
 }
 
-
-
 #articulo {
-    width: 500px;
+    width: 400px;
     height: 450px;
     padding: 30px;
     background: #fff;
@@ -111,7 +109,7 @@ button:hover {
 }
 
 #footer {
-    margin-top: 45px;
+    margin-top: 10px;
     padding: 20px;
     background-color: black;
     width: 100%;
