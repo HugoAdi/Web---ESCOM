@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2022 a las 06:45:15
+-- Tiempo de generación: 05-06-2022 a las 08:17:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -37,6 +37,13 @@ CREATE TABLE `administrador` (
   `No.empleado` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`Id`, `No.empleado`) VALUES
+(1, 238420);
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +73,13 @@ CREATE TABLE `alumno` (
   `Id_Actividad` int(11) NOT NULL,
   `Id_Material` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`Id`, `Progreso`, `Tutor`, `Boleta`, `Id_Grupo`, `Id_Bloque`, `Id_Actividad`, `Id_Material`) VALUES
+(3, '1', 1, 2022010101, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -121,6 +135,13 @@ CREATE TABLE `profesor` (
   `Id_agenda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `profesor`
+--
+
+INSERT INTO `profesor` (`Id`, `No.empleado`, `Id_grupo`, `Id_agenda`) VALUES
+(2, 2831123, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -129,14 +150,24 @@ CREATE TABLE `profesor` (
 
 CREATE TABLE `usuario` (
   `Id` int(10) NOT NULL,
-  `Nombre` text NOT NULL,
-  `Nombre_usuario` text NOT NULL,
-  `Contraseña` varchar(8) NOT NULL,
-  `Telefono` int(10) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Nombre_usuario` varchar(50) NOT NULL,
+  `Contraseña` varchar(20) NOT NULL,
+  `Tipo` varchar(20) NOT NULL,
+  `Telefono` int(11) NOT NULL,
   `CURP` varchar(18) NOT NULL,
-  `Correo_electronico` text NOT NULL,
-  `Correo_electronico_alterno` text NOT NULL
+  `Correo_electronico` varchar(50) NOT NULL,
+  `Correo_electronico_alterno` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`Id`, `Nombre`, `Nombre_usuario`, `Contraseña`, `Tipo`, `Telefono`, `CURP`, `Correo_electronico`, `Correo_electronico_alterno`) VALUES
+(1, 'Prueba', 'Prueba', 'prueba', 'Administrador', 553119461, 'CGH120486JEPGMSLI8', 'prueba@gmail.com', 'prueba2@gmail.com'),
+(2, 'Prueba', 'Prueba', 'prueba', 'Profesor', 555555555, 'CUSM192805IFLG09PW', 'prueba@gmail.com', 'prueba2@gmail.com'),
+(3, 'Prueba', 'Prueba', 'prueba', 'Alumno', 553819471, 'PFYM1029IMG0971PQH', 'prueba@gmail.com', 'prueba2@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -204,7 +235,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
