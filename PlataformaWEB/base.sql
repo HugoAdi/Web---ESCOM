@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2022 a las 10:25:01
+-- Tiempo de generación: 07-06-2022 a las 23:49:26
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Versión de PHP: 8.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,8 +47,16 @@ CREATE TABLE `agenda` (
   `Id` int(11) NOT NULL,
   `hora` time NOT NULL,
   `fecha` date NOT NULL,
-  `alumno` int(11) NOT NULL
+  `alumno` int(11) NOT NULL,
+  `profesor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `agenda`
+--
+
+INSERT INTO `agenda` (`Id`, `hora`, `fecha`, `alumno`, `profesor`) VALUES
+(1, '18:00:00', '2022-06-15', 2, 6);
 
 -- --------------------------------------------------------
 
@@ -72,6 +80,7 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`Id`, `Progreso`, `Tutor`, `Boleta`, `Id_Grupo`, `Id_Bloque`, `Id_Actividad`, `Id_Material`) VALUES
+(2, '0', 'Prueba', 2020938475, 2, 0, 0, 0),
 (7, '0', '0', 201853251, 3, 0, 0, 0);
 
 -- --------------------------------------------------------
@@ -95,8 +104,18 @@ CREATE TABLE `bloque` (
 
 CREATE TABLE `grupo` (
   `Id` int(11) NOT NULL,
-  `Id_bloque` int(11) NOT NULL
+  `Profesor` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `grupo`
+--
+
+INSERT INTO `grupo` (`Id`, `Profesor`) VALUES
+(1, 5),
+(2, 6),
+(3, 5),
+(4, 6);
 
 -- --------------------------------------------------------
 
@@ -114,6 +133,13 @@ CREATE TABLE `material` (
   `Observacion` text DEFAULT NULL,
   `Archivo` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `material`
+--
+
+INSERT INTO `material` (`Id`, `Nombre`, `Tema`, `Tipo`, `Estatus`, `Atendida`, `Observacion`, `Archivo`) VALUES
+(1, 'Prueba', '1', 'Actividad', 'Publicado', NULL, NULL, 0x54656d6120312e68746d6c);
 
 -- --------------------------------------------------------
 
@@ -145,7 +171,7 @@ CREATE TABLE `usuario` (
   `Id` int(10) NOT NULL,
   `Nombre` text NOT NULL,
   `Nombre_usuario` text NOT NULL,
-  `tipo_usuario` varchar(10) NOT NULL,
+  `tipo_usuario` varchar(20) NOT NULL,
   `Contraseña` varchar(8) NOT NULL,
   `Telefono` int(10) NOT NULL,
   `CURP` varchar(18) NOT NULL,
@@ -159,11 +185,11 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`Id`, `Nombre`, `Nombre_usuario`, `tipo_usuario`, `Contraseña`, `Telefono`, `CURP`, `Correo_electronico`, `Correo_electronico_alterno`) VALUES
 (1, 'Maria Fe', 'Raven', 'alumno', 'raven123', 717295135, '453252352', 'hola@prueba.com', 'hola2@prueba2.com'),
-(2, 'Maria Fe', 'Raven', 'alumno', 'raven123', 717295135, '453252352', 'hola@prueba.com', 'hola2@prueba2.com'),
-(3, 'AJAJAJ', 'JAJAJAJ', 'Administra', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
-(4, 'AJAJAJ', 'JAJAJAJ', 'Administra', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
+(2, 'prueba', 'Raven', 'alumno', 'raven123', 556182930, '453252352', 'prueba@gmail.com', 'hola2@prueba2.com'),
+(3, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
+(4, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
 (5, 'Hugo Adi Jimenez Martinez', '83838', 'profesor', '123', 381581835, 'ufsdjsfdj', 'hgug', 'gjsgjsj'),
-(6, 'gsgsdg', 'hola', 'profesor', '123', 252452, 'iaiai', 'gsdgsd', 'gsgsg'),
+(6, 'Prueba', 'hola', 'profesor', '123', 551845289, 'iaiai', 'prueba@gmail.com', 'gsgsg'),
 (7, 'alumno', 'aja', 'alumno', '123', 54525, 'abduzcan', 'alumno', 'algsfdg');
 
 --
@@ -227,6 +253,24 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `agenda`
+--
+ALTER TABLE `agenda`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `grupo`
+--
+ALTER TABLE `grupo`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `material`
+--
+ALTER TABLE `material`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
