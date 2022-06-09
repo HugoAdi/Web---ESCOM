@@ -16,7 +16,7 @@
     <body>
         <div id="contenedor">
             <div id="header">
-                <h1>AQUI VA UN TITULO BONITO CON UN LOGO BONITO</h1>
+                <h1>INTERMATE PLATAFORMA EDUCATIVA</h1>
             </div>
             <div id="navegacion">
                 <nav>
@@ -49,7 +49,6 @@
                         <li><a href = "ProfAgenda.php">Agenda</a></li>
                         <li><a href = "ProfActPerfil.php">Actualizacion de perfil</a></li>
                         <li><a href = "ProfContraseña.php">Contraseña</a></li>
-                        <li><a href = "ProfSoporte.html">Soporte</a></li>
                         <li><a href = "ProfAyuda.html">Ayuda</a></li>
                         <li><a style="color: rgb(255, 93, 93);" href = "localhost/prueba/index.php">SALIR</a></li>
                     </ul>
