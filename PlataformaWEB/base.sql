@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2022 a las 23:49:26
+-- Tiempo de generación: 09-06-2022 a las 09:57:42
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -56,7 +56,10 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`Id`, `hora`, `fecha`, `alumno`, `profesor`) VALUES
-(1, '18:00:00', '2022-06-15', 2, 6);
+(1, '18:00:00', '2022-06-15', 2, 6),
+(2, '11:00:00', '2022-06-19', 1, 6),
+(3, '14:30:00', '2022-06-30', 7, 6),
+(5, '08:00:00', '2022-06-25', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -80,8 +83,9 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`Id`, `Progreso`, `Tutor`, `Boleta`, `Id_Grupo`, `Id_Bloque`, `Id_Actividad`, `Id_Material`) VALUES
-(2, '0', 'Prueba', 2020938475, 2, 0, 0, 0),
-(7, '0', '0', 201853251, 3, 0, 0, 0);
+(1, '7', 'Prueba', 2020957395, 2, 0, 0, 0),
+(2, '9', 'Prueba', 2020938475, 2, 0, 0, 0),
+(7, '5', 'Prueba', 2018532514, 4, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +143,10 @@ CREATE TABLE `material` (
 --
 
 INSERT INTO `material` (`Id`, `Nombre`, `Tema`, `Tipo`, `Estatus`, `Atendida`, `Observacion`, `Archivo`) VALUES
-(1, 'Prueba', '1', 'Actividad', 'Publicado', NULL, NULL, 0x54656d6120312e68746d6c);
+(1, 'Prueba', '1', 'Actividad', 'Publicado', 'Si', 'Ninguna', 0x54656d6120312e68746d6c),
+(3, 'Video 1', '5', 'Video', 'Pendiente', 'No', 'Publicar despues', 0x4d6963726f736f66745465616d732d696d6167652e706e67),
+(4, 'Primer Material', '8', 'Imprimir', 'Publicado', 'Si', 'Ninguna', 0x4d6963726f736f66745465616d732d696d6167652e706e67),
+(5, 'Primer Examen', '2', 'Evaluacion', 'Pendiente', 'No', 'Cambiar respuestas', 0x4d6963726f736f66745465616d732d696d6167652e706e67);
 
 -- --------------------------------------------------------
 
@@ -185,12 +192,12 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`Id`, `Nombre`, `Nombre_usuario`, `tipo_usuario`, `Contraseña`, `Telefono`, `CURP`, `Correo_electronico`, `Correo_electronico_alterno`) VALUES
 (1, 'Maria Fe', 'Raven', 'alumno', 'raven123', 717295135, '453252352', 'hola@prueba.com', 'hola2@prueba2.com'),
-(2, 'prueba', 'Raven', 'alumno', 'raven123', 556182930, '453252352', 'prueba@gmail.com', 'hola2@prueba2.com'),
+(2, 'Memo Carzo', 'Raven', 'alumno', 'raven123', 556182930, '453252352', 'prueba@gmail.com', 'hola2@prueba2.com'),
 (3, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
 (4, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
 (5, 'Hugo Adi Jimenez Martinez', '83838', 'profesor', '123', 381581835, 'ufsdjsfdj', 'hgug', 'gjsgjsj'),
 (6, 'Prueba', 'hola', 'profesor', '123', 551845289, 'iaiai', 'prueba@gmail.com', 'gsgsg'),
-(7, 'alumno', 'aja', 'alumno', '123', 54525, 'abduzcan', 'alumno', 'algsfdg');
+(7, 'Pedro Perez', 'aja', 'alumno', '123', 54525, 'abduzcan', 'alumno@gmail.com', 'algsfdg@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -258,7 +265,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo`
@@ -270,7 +277,7 @@ ALTER TABLE `grupo`
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
