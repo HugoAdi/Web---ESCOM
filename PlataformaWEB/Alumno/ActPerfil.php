@@ -68,7 +68,7 @@
                         <input type="submit" id="actualizar" name="actualizar" value="Actualizar">
                     </fieldset>
                                         <!-- </form> -->
-                                        <!-- <?php 
+                                        <?php 
                                     if ($_POST) {
                                             $num = "/^[0-9]+$/";
                                         $patron_texto = "/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ\s]+$/";
@@ -102,7 +102,7 @@
                                             ?><script type="text/javascript">window.location.replace("actualizar_e.php");</script><?php
                                         }
                                     }
-                            ?>-->
+                            ?>
                     <script type="text/javascript">
                         const accordion = document.getElementsByClassName("contentBx");
                         for(i = 0;i<accordion.length;i++){
