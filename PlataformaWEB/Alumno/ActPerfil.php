@@ -42,13 +42,13 @@
         </div>
         <div id="contenido">
             <div id="articulo">
-                            <!-- <?php
+                            <?php
                             $conexion = mysqli_connect('localhost','root','','proyecto') or die ("f");
                                 $id = $_COOKIE['id_estudiante'];
                                 $result = mysqli_query($conexion,"select * from alumno where id_alumno='$id'");
                                 $row = mysqli_fetch_array($result,MYSQLI_BOTH)
-                                    ?>-->
-                                        <!-- <form id="actualizar" method="POST" class="actualizar"> -->
+                                    ?>
+                                        <form id="actualizar" method="POST" class="actualizar">
                     <fieldset>
                         <legend><h3>Actualizacion de perfil</h3></legend>
                         <label for="boleta" class="label">Numero de boleta</label><br>
@@ -67,7 +67,7 @@
                         <input id="contraseña" name="contraseña" value=""></input><br>
                         <input type="submit" id="actualizar" name="actualizar" value="Actualizar">
                     </fieldset>
-                                        <!-- </form> -->
+                                        </form>
                                         <?php 
                                     if ($_POST) {
                                             $num = "/^[0-9]+$/";
