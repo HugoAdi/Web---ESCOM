@@ -36,7 +36,7 @@
                     <li><a href = "ActPerfil.html">Actualizacion de perfil</a></li>
                     <li><a href = "Soporte.html">Soporte</a></li>
                     <li><a href = "Ayuda.html">Ayuda</a></li>
-                    <li><a style="color: rgb(255, 93, 93);" href = "">SALIR</a></li>
+                    <li><a style="color: rgb(255, 93, 93);" href = "salir.php">SALIR</a></li>
                 </ul>
             </nav> 
         </div>
