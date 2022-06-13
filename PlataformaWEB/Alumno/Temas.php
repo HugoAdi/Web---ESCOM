@@ -17,29 +17,29 @@
         <div id="navegacion">
             <nav>
                 <ul class="nav">
-                    <li><a href = "Alumno.html">Inicio</a></li>
+                    <li><a href = "Alumno.php">Inicio</a></li>
                     <li><a href = "Bloque.html">Bloque</a>
                         <ul>
                             <li><a href = "Bloque1.html">Bloque 1</a></li>
                             <li><a href = "Bloque2.html">Bloque 2</a></li>
-                            <li><a href = "Bloque3.html">Bloque 3</a></li>
+                            <li><a href = "Bloque3.php">Bloque 3</a></li>
                         </ul> 
                     </li>
-                    <li><a href = "Temas.html">Temas</a></li>
+                    <li><a href = "Temas.php">Temas</a></li>
                     <li><a href = "TipoM.html">Tipo de material</a>
                         <ul>
-                            <li><a href = "video.html">Video</a></li>
-                            <li><a href = "docs.html">Material para imprimir</a></li>
-                            <li><a href = "actividades.html">Actividad en linea</a></li>
-                            <li><a href = "evaluacion.html">Evaluación</a></li>
-                            <li><a href = "librodig.html">Libro digital</a></li>
+                            <li><a href = "video.php">Video</a></li>
+                            <li><a href = "docs.php">Material para imprimir</a></li>
+                            <li><a href = "actividades.php">Actividad en linea</a></li>
+                            <li><a href = "evaluacion.php">Evaluación</a></li>
+                            <li><a href = "librodig.php">Libro digital</a></li>
                         </ul> 
                     </li>
-                    <li><a href = "Tutorias.html">Tutorias</a></li>
-                    <li><a href = "ActPerfil.html">Actualizacion de perfil</a></li>
-                    <li><a href = "Soporte.html">Soporte</a></li>
-                    <li><a href = "Ayuda.html">Ayuda</a></li>
-                    <li><a style="color: rgb(255, 93, 93);" href = "">SALIR</a></li>
+                    <li><a href = "Tutorias.php">Tutorias</a></li>
+                    <li><a href = "ActPerfil.php">Actualizacion de perfil</a></li>
+                    <li><a href = "Soporte.php">Soporte</a></li>
+                    <li><a href = "Ayuda.php">Ayuda</a></li>
+                    <li><a style="color: rgb(255, 93, 93);" href = "salir.php">SALIR</a></li>
                 </ul>
             </nav> 
         </div>
