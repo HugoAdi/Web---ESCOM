@@ -8,11 +8,40 @@
         <link rel="stylesheet" type="text/css" href="./recursos/index.css">
         <link rel="stylesheet" type="text/css" href="./recursos/nav.css">
         <link rel="stylesheet" type="text/css" href="./recursos/header.css">
+        <link rel="stylesheet" type="text/css" href="reloj.css">
     </head>
+    <script>
+        function actual() {
+            fecha=new Date(); 
+            hora=fecha.getHours();
+            minuto=fecha.getMinutes();
+            segundo=fecha.getSeconds(); 
+            if (hora<10) {
+                hora="0"+hora;
+                }
+            if (minuto<10) { 
+                minuto="0"+minuto;
+                }
+            if (segundo<10) { 
+                segundo="0"+segundo;
+                }
+            mireloj = hora+" : "+minuto+" : "+segundo;	
+            return mireloj; 
+        }
+        function actualizar() { 
+            mihora=actual(); 
+            mireloj=document.getElementById("reloj");
+            mireloj.innerHTML=mihora; 
+        }
+        setInterval(actualizar,1000);
+    </script>
     <body>
         <div id="contenedor">
             <div id="header">
-                <h1>INTERMATE PLATAFORMA EDUCATIVA</h1>
+                <h1 style="width: 60%;position:absolute;">INTERMATE PLATAFORMA EDUCATIVA</h1>
+                <div id="reloj">
+                    00 : 00 : 00
+                </div>
             </div>
             <nav>
                 <ul>
@@ -39,7 +68,10 @@
                 <div id="section">
                     <div id="articulo">
                         <h2>PROYECTO<br>TECWEB</h2>
-                        <p>El proyecto es una plataforma de educación en linea para nivel primaria en el área de matemáticas, a través de un entorno amigable e intuitivo para que el alumno tenga fácil acceso a los recursos educativos , con asesoría con profesores, los cuales cuentan con las herramientas para que se puedan llevar seguimiento de las actividades y evaluaciones del alumno.</p>
+                        <p>El proyecto es una plataforma de educación en linea para nivel primaria en el área de matemáticas,
+                             a través de un entorno amigable e intuitivo para que el alumno tenga fácil acceso a los recursos educativos , 
+                             con asesoría con profesores, los cuales cuentan con las herramientas para que se puedan llevar seguimiento 
+                             de las actividades y evaluaciones del alumno.</p>
                     </div>
                 </div>
                 <div id="aside">

@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="./recursos/index2.css">
         <link rel="stylesheet" type="text/css" href="./recursos/nav.css">
         <link rel="stylesheet" type="text/css" href="./recursos/header.css">
+        <link rel="stylesheet" type="text/css" href="reloj.css">
         <style>
             input,
             select,
@@ -43,6 +44,31 @@
             }
         </style>
     </head>
+    <script>
+        function actual() {
+            fecha=new Date(); 
+            hora=fecha.getHours();
+            minuto=fecha.getMinutes();
+            segundo=fecha.getSeconds(); 
+            if (hora<10) {
+                hora="0"+hora;
+                }
+            if (minuto<10) { 
+                minuto="0"+minuto;
+                }
+            if (segundo<10) { 
+                segundo="0"+segundo;
+                }
+            mireloj = hora+" : "+minuto+" : "+segundo;	
+            return mireloj; 
+        }
+        function actualizar() { 
+            mihora=actual(); 
+            mireloj=document.getElementById("reloj");
+            mireloj.innerHTML=mihora; 
+        }
+        setInterval(actualizar,1000);
+    </script>
     <body>
         <?php
         session_start();
@@ -50,8 +76,11 @@
         ?>
         <div id="contenedor">
         <div id="header">
-                <h1>INTERMATE PLATAFORMA EDUCATIVA</h1>
+            <h1 style="width: 60%;position:absolute;">INTERMATE PLATAFORMA EDUCATIVA</h1>
+            <div id="reloj">
+                00 : 00 : 00
             </div>
+        </div>
             <nav>
                 <ul>
                     <li><a href = "index.php">Pagina Principal</a></li>
