@@ -39,12 +39,7 @@
                 <div id="section">
                     <div id="articulo">
                         <h2>PROYECTO<br>TECWEB</h2>
-                        <p>Esta página web fue elaborado para cumplir con el anhelo compartido de
-                            que en el país se ofrezca una educación con equidad y calidad, en la que
-                            todos los alumnos aprendan, sin importar su origen, su condición personal,
-                            económica o social, y en la que se promueva una formación centrada en
-                            la dignidad humana, la solidaridad, el amor a la patria, el respeto y cuidado
-                            de la salud, así como la preservación del medio ambiente. </p>
+                        <p>El proyecto es una plataforma de educación en linea para nivel primaria en el área de matemáticas, a través de un entorno amigable e intuitivo para que el alumno tenga fácil acceso a los recursos educativos , con asesoría con profesores, los cuales cuentan con las herramientas para que se puedan llevar seguimiento de las actividades y evaluaciones del alumno.</p>
                     </div>
                 </div>
                 <div id="aside">

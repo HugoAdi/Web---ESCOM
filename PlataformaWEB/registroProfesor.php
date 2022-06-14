@@ -49,12 +49,12 @@
         include("conexion.php");
         ?>
         <div id="contenedor">
-            <div id="header">
-                <h1>AQUI VA UN TITULO BONITO CON UN LOGO BONITO</h1>
+        <div id="header">
+                <h1>INTERMATE PLATAFORMA EDUCATIVA</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href = "index.html">Pagina Principal</a></li>
+                    <li><a href = "index.php">Pagina Principal</a></li>
                     <li><a href = "acerca.html">Acerca de</a>
                         <ul>
                             <li><a href = "acerca2.html">Alumno</a></li>
@@ -69,7 +69,7 @@
                         <li><a href = "ayuda2.html">Alumno</a></li>
                         <li><a href = "ayuda3.html">Docente</a></li>
                         <li><a href = "ayuda4.html">Administrador</a></li>
-                        </ul> 
+                        </ul>  
                     </li>
                 </ul>
             </nav>

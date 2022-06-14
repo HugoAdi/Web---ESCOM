@@ -16,7 +16,7 @@
 					echo "<meta http-equiv='refresh' content='0; url=Profesor/vistaProfesor.html'>";
 				}
 				else if($tpu=="administrador"){
-					echo "<meta http-equiv='refresh' content='0; url=Administrador/vistaAdministrador.html'>";
+					echo "<meta http-equiv='refresh' content='0; url=Administrador/AdminGestionarUsuario.php'>";
 				}
 				else if($tpu=="alumno"){
 					echo "<meta http-equiv='refresh' content='0; url=Alumno/Alumno.html'>";

@@ -49,12 +49,12 @@
         include("conexion.php");
         ?>
         <div id="contenedor">
-            <div id="header">
-                <h1>AQUI VA UN TITULO BONITO CON UN LOGO BONITO</h1>
+        <div id="header">
+                <h1>INTERMATE PLATAFORMA EDUCATIVA</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href = "index.html">Pagina Principal</a></li>
+                    <li><a href = "index.php">Pagina Principal</a></li>
                     <li><a href = "acerca.html">Acerca de</a>
                         <ul>
                             <li><a href = "acerca2.html">Alumno</a></li>
@@ -69,7 +69,7 @@
                         <li><a href = "ayuda2.html">Alumno</a></li>
                         <li><a href = "ayuda3.html">Docente</a></li>
                         <li><a href = "ayuda4.html">Administrador</a></li>
-                        </ul> 
+                        </ul>  
                     </li>
                 </ul>
             </nav>
@@ -79,24 +79,24 @@
                         <div class="container">
                         <h1 style="text-align: center;">Registro</h1>
                     
-                        <label for="nombre_completo"><b>nombre completo</b></label>
+                        <label for="nombre_completo"><b>Nombre completo</b></label>
                         <input type="text" placeholder="Ingresa tu nombre completo" name="nombre_completo" id="nombre_completo" required>
 
-                        <label for="correo_principal"><b>correo principal</b></label>
-                        <input type="text" placeholder="Ingresa correo" name="correo_principal" id="correo_principal" required>
+                        <label for="correo_principal"><b>Correo principal</b></label>
+                        <input type="email" placeholder="Ingresa correo" name="correo_principal" id="correo_principal" required>
 
-                        <label for="correo_alterno"><b>correo alterno</b></label>
-                        <input type="text" placeholder="Ingresa correo" name="correo_alterno" id="correo_alterno" required>
+                        <label for="correo_alterno"><b>Correo alterno</b></label>
+                        <input type="email" placeholder="Ingresa correo" name="correo_alterno" id="correo_alterno" required>
 
                         <label for="CURP"><b>CURP</b></label>
                         <input type="text" placeholder="Ingresa CURP" name="CURP" id="CURP" required>
 
-                        <label for="usuario"><b>Nombre Usuario</b></label>
+                        <label for="usuario"><b>Nombre del usuario</b></label>
                         <input type="text" placeholder="Ingresa tu nombre de usuario" name="usuario" id="usuario" required>
                     
                         <label for="contra"><b>Contraseña</b></label>
                         <br>
-                        <input  type="password" placeholder="Enter Password" name="contra" id="contra" required>
+                        <input  type="password" placeholder="Contraseña" name="contra" id="contra" required>
 
                         <br><br>
                         <label for="telefono"><b>Telefono</b></label>
