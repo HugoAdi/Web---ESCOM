@@ -88,17 +88,13 @@
                         <td colspan="4" bgcolor="#00F3FF"><h3>Actividades</h3></td>
                     </tr>
                     <tr>
-                        <td bgcolor="#3AFF3E" align="center">Fecha inicio</td>
-                        <td bgcolor="#3AFF3E" align="center">Fecha limite</td>
-                        <td bgcolor="#3AFF3E" align="center">Bloque</td>
                         <td bgcolor="#3AFF3E" align="center">Nombre</td>
                     </tr>
+			<?php
                     <tr>
                         <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                        <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                        <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                        <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
                     </tr>
+			?>
                 </table>
             </div>
         </div>            
