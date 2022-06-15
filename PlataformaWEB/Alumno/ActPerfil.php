@@ -77,12 +77,12 @@
         </div>
         <div id="contenido">
             <div id="articulo">
-                            <?php
-                            $conexion = mysqli_connect('localhost','root','','proyecto') or die ("f");
-                                $id = $_COOKIE['id_estudiante'];
-                                $result = mysqli_query($conexion,"select * from alumno where id_alumno='$id'");
-                                $row = mysqli_fetch_array($result,MYSQLI_BOTH)
-                                    ?>
+                 <?php
+                            error_reporting(0);
+                            include("conexion.php");
+                            $id=$_POST['id'];
+                            $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
+                        ?>
                                         <form id="actualizar" method="POST" class="actualizar">
                     <fieldset>
                         <legend><h3>Actualizacion de perfil</h3></legend>
