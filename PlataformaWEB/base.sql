@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2022 a las 09:57:42
+-- Tiempo de generación: 15-06-2022 a las 08:53:19
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.5
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,7 +85,8 @@ CREATE TABLE `alumno` (
 INSERT INTO `alumno` (`Id`, `Progreso`, `Tutor`, `Boleta`, `Id_Grupo`, `Id_Bloque`, `Id_Actividad`, `Id_Material`) VALUES
 (1, '7', 'Prueba', 2020957395, 2, 0, 0, 0),
 (2, '9', 'Prueba', 2020938475, 2, 0, 0, 0),
-(7, '5', 'Prueba', 2018532514, 4, 0, 0, 0);
+(7, '5', 'Prueba', 2018532514, 4, 0, 0, 0),
+(8, '0', 'Prueba', 2147483647, 4, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -166,7 +167,30 @@ CREATE TABLE `profesor` (
 --
 
 INSERT INTO `profesor` (`Id`, `No_empleado`, `Id_grupo`, `Id_agenda`) VALUES
-(6, 1234, 1, 12);
+(6, 1234, 1, 12),
+(9, 18201, 15, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `soporte`
+--
+
+CREATE TABLE `soporte` (
+  `id` int(11) NOT NULL,
+  `tema` text NOT NULL,
+  `correo_principal` text NOT NULL,
+  `detalle` text NOT NULL,
+  `atendida` tinytext NOT NULL,
+  `observacion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `soporte`
+--
+
+INSERT INTO `soporte` (`id`, `tema`, `correo_principal`, `detalle`, `atendida`, `observacion`) VALUES
+(0, 'Matematicas', 'ejemplo@hotmail.com', 'Hay una duda', 'No', 'Esta dificil la duda');
 
 -- --------------------------------------------------------
 
@@ -193,11 +217,14 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`Id`, `Nombre`, `Nombre_usuario`, `tipo_usuario`, `Contraseña`, `Telefono`, `CURP`, `Correo_electronico`, `Correo_electronico_alterno`) VALUES
 (1, 'Maria Fe', 'Raven', 'alumno', 'raven123', 717295135, '453252352', 'hola@prueba.com', 'hola2@prueba2.com'),
 (2, 'Memo Carzo', 'Raven', 'alumno', 'raven123', 556182930, '453252352', 'prueba@gmail.com', 'hola2@prueba2.com'),
-(3, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
-(4, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'JAJAJAJ', 'JAJAJA'),
-(5, 'Hugo Adi Jimenez Martinez', '83838', 'profesor', '123', 381581835, 'ufsdjsfdj', 'hgug', 'gjsgjsj'),
-(6, 'Prueba', 'hola', 'profesor', '123', 551845289, 'iaiai', 'prueba@gmail.com', 'gsgsg'),
-(7, 'Pedro Perez', 'aja', 'alumno', '123', 54525, 'abduzcan', 'alumno@gmail.com', 'algsfdg@gmail.com');
+(3, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'vdgvgf@gmail.com', 'dhbfdhsbf@gmail.com'),
+(4, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'djbfh@gmail.com', 'dhbfhbsf@gmail.com'),
+(5, 'Hugo Adi Jimenez Martinez', '83838', 'profesor', '123', 381581835, 'ufsdjsfdj', 'hggug@gmail.com', 'gjsgjsj@gmail.com'),
+(6, 'Prueba', 'hola', 'profesor', '123', 551845289, 'iaiai', 'prueba@gmail.com', 'gsgsg@gmail.com'),
+(7, 'Pedro Perez', 'aja', 'alumno', '123', 54525, 'abduzcan', 'alumno@gmail.com', 'algsfdg@gmail.com'),
+(8, 'Elba Neado', 'elba', 'alumno', 'neado', 555123749, 'HFOE7406586JDNDK', 'djbf@gmail.com', 'bdhbfdhb@gmail.com'),
+(9, 'Juan Jose Rios Alonso', 'Juan Alonso', 'profesor', '12345678', 2147483647, 'RIAJ200329HMCSLn01', 'jjriosalonso@gmail.com', 'jjriosalonso@gmail.com'),
+(10, 'Nombre Prueba', 'Carlitos123', 'profesor', '123', 2147483647, 'gfj', 'hola@hotmail.com', 'hola2@hotmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -252,6 +279,12 @@ ALTER TABLE `profesor`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indices de la tabla `soporte`
+--
+ALTER TABLE `soporte`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -283,7 +316,7 @@ ALTER TABLE `material`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
