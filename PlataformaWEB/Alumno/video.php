@@ -77,8 +77,8 @@
         </div>
         <div id="contenido">
             <div id="articulo">
+		    
                 <center><table border="5" cellpadding="0" width="700px" bgcolor="#C9C3FF" bordercolor="#380B61" cellspacing ="10">
-                    <!-- <font ><caption><h2> Planetas </h2></caption></font> -->
                     <tr align="center">
                         <td colspan="3" bgcolor="#00F3FF"><h3>Videos</h3></td>
                     </tr>
