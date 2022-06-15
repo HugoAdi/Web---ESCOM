@@ -75,67 +75,16 @@
             </nav> 
         </div>
         <div id="contenido">
-            <div id="section">
-                <div id="articulo">
-                    <center><table border="5" cellpadding="0" width="900px" bgcolor="#C9C3FF" bordercolor="#380B61" cellspacing ="10">
-                        <!-- <font ><caption><h2> Planetas </h2></caption></font> -->
-                        <tr align="center">
-                            <td colspan="9" bgcolor="#00F3FF"><h3>Archivos Bloque 2</h3></td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#3AFF3E" align="center">id_mat</td>
-                            <td bgcolor="#3AFF3E" align="center">Bloque</td>
-                            <td bgcolor="#3AFF3E" align="center">Tema</td>
-                            <td bgcolor="#3AFF3E" align="center">Subtema</td>
-                            <td bgcolor="#3AFF3E" align="center">Tipo de material</td>
-                            <td bgcolor="#3AFF3E" align="center">Nombre</td>
-                            <td bgcolor="#3AFF3E" align="center">Actividad</td>
-                            <td bgcolor="#3AFF3E" align="center">Evaluacion</td>
-                            <td bgcolor="#3AFF3E" align="center">Observaciones</td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                            <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                        </tr>
-                    </table>
-                    <!-- <div class="box">
-                        <div class="informacion">
-                            <table border="1" class="tabla">
-                        <tr>
-                            <td align="center">Archivos bloque 1</td>
-                        </tr>
-                        
-                    <?php
-                        $direccion = '../../Archivos/B1/';
-                        if ( $dir = opendir($direccion)) {
-                            while ($archivo = readdir($dir)) {
-                                   if ($archivo != '.' && $archivo != '..') {
-                                       ?> <tr><td align="center"><a href="<?php echo $direccion.$archivo ?>"><?php echo $archivo; ?></a></td> </tr> <?php
-                                   }
-                               }   
-                        }
-                    ?>
-                    </table>
-                        </div>
-                    </div> -->
-                    <script type="text/javascript">
-                        const accordion = document.getElementsByClassName("contentBx");
-                        for(i = 0;i<accordion.length;i++){
-                            accordion[i].addEventListener('click',function(){
-                                this.classList.toggle('active');
-                            });
-                        }
-                    </script>
-                </div>
+            <div id="articulo">
+		    <?php
+                            error_reporting(0);
+                            include("conexion.php");
+                            $id=$_POST['id'];
+                            $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
+                        ?>
+                <iframe src="https://libros.conaliteg.gob.mx/2021/P1MAA.htm#page/77" style="width:100%; height:700px;" frameborder="0" ></iframe>
             </div>
-        </div>
+        </div>   
         <div id="footer">
             <p>Copyright@2022 Equipo 5 2CV11 | R Todos los derechos reservados</p>
         </div>
