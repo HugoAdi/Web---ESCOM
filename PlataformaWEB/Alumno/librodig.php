@@ -77,6 +77,12 @@
         </div>
         <div id="contenido">
             <div id="articulo">
+		    <?php
+                            error_reporting(0);
+                            include("conexion.php");
+                            $id=$_POST['id'];
+                            $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
+                        ?>
                 <iframe src="https://libros.conaliteg.gob.mx/2021/P1MAA.htm?#page/143" style="width:100%; height:700px;" frameborder="0" ></iframe>
             </div>
         </div>            
