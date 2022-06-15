@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Registro</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./recursos/index2.css">
         <link rel="stylesheet" type="text/css" href="./recursos/nav.css">
         <link rel="stylesheet" type="text/css" href="./recursos/header.css">
