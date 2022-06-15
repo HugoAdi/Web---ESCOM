@@ -77,6 +77,12 @@
         </div>
         <div id="contenido">
             <div id="articulo">
+		    <?php
+                            error_reporting(0);
+                            include("conexion.php");
+                            $id=$_POST['id'];
+                            $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
+                        ?>
                 <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
                     <tr>
                         <td>Hora</td>
