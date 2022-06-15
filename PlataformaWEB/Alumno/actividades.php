@@ -91,10 +91,15 @@
                         <td bgcolor="#3AFF3E" align="center">Nombre</td>
                     </tr>
 			<?php
-                    <tr>
-                        <td bgcolor="#3AFF3E" align="center">&nbsp;</td>
-                    </tr>
-			?>
+        $direccion = '../../Archivos/B1/';
+        if ( $dir = opendir($direccion)) {
+            while ($archivo = readdir($dir)) {
+                   if ($archivo != '.' && $archivo != '..') {
+                       ?> <tr><td align="center"><a href="<?php echo $direccion.$archivo ?>"><?php echo $archivo; ?></a></td> </tr> <?php
+                   }
+               }   
+        }
+    ?>
                 </table>
             </div>
         </div>            
