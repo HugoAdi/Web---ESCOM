@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./recursos/aluindex.css">
         <link rel="stylesheet" type="text/css" href="./recursos/navAlumno.css">
         <link rel="stylesheet" type="text/css" href="./recursos/aluheader.css">
+    <link rel="stylesheet" type="text/css" href="../reloj.css">
     </head>
 <script>
         function actual() {
@@ -33,10 +34,13 @@
         }
         setInterval(actualizar,1000);
     </script>
-<body onload="validar_sesione()">
-    <div id="contenedor">
-        <div id="header">
-            <h1 style="width: 60%;position:absolute;">INTERMATE PLATAFORMA EDUCATIVA</h1>
+    <body onload="validar_sesione()">
+    <?php
+        $conexion = mysqli_connect('localhost','root','','proyecto') or die ("f");
+    ?>
+        <div id="contenedor">
+            <div id="header">
+                <h1 style="width: 60%;position:absolute;">INTERMATE PLATAFORMA EDUCATIVA</h1>
                 <div id="reloj">
                     00 : 00 : 00
                 </div>
