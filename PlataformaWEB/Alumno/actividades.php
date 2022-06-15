@@ -91,7 +91,7 @@
                         <td bgcolor="#3AFF3E" align="center">Nombre</td>
                     </tr>
 			<?php
-        $direccion = '../../Archivos/B1/';
+        $direccion = '';
         if ( $dir = opendir($direccion)) {
             while ($archivo = readdir($dir)) {
                    if ($archivo != '.' && $archivo != '..') {
