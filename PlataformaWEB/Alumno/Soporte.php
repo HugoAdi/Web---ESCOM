@@ -76,6 +76,12 @@
         </div>
         <div id="contenido">
             <div id="articulo">
+		    <?php
+                            error_reporting(0);
+                            include("conexion.php");
+                            $id=$_POST['id'];
+                            $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
+                        ?>
                 <fieldset>
                     <legend><h3>Soporte</h3></legend>
                     Duda: <input type="text" required placeholder="Palabra secreta">
