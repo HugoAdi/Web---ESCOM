@@ -77,7 +77,12 @@
         </div>
         <div id="contenido">
             <div id="articulo">
-		    
+		    <?php
+                            error_reporting(0);
+                            include("conexion.php");
+                            $id=$_POST['id'];
+                            $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
+                        ?>
                 <center><table border="5" cellpadding="0" width="700px" bgcolor="#C9C3FF" bordercolor="#380B61" cellspacing ="10">
                     <tr align="center">
                         <td colspan="3" bgcolor="#00F3FF"><h3>Videos</h3></td>
