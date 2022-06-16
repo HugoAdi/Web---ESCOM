@@ -74,38 +74,39 @@
         </div>
         <div id="contenido">
             <div id="articulo">
-		        <?php
-                            error_reporting(0);
-                            include("conexion.php");
-                            $id=$_POST['id'];
-                            $id1=mysqli_query($conexion, "SELECT * FROM material WHERE Tipo='Video'");
+		<?php
+                    error_reporting(0);
+                    include("conexion.php");
+                    $id=$_POST['id'];
+                    $id1=mysqli_query($conexion, "SELECT * FROM material WHERE Tipo='Video'");
+                ?>
+                <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Tema</td>
+                        <td>Estatus</td>
+                        <td>Atendida</td>
+                        <td>Observacion</td>
+                        <td>Ver</td>
+                    </tr>
+                    <?php
+                    while($row = mysqli_fetch_array($id1))
+                        {
                         ?>
-                        <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
                             <tr>
-                                <td>Nombre</td>
-                                <td>Tema</td>
-                                <td>Estatus</td>
-                                <td>Atendida</td>
-                                <td>Observacion</td>
-                                <td>Ver</td>
+                                <td><?php echo $row["Nombre"]; ?></td>
+                                <td><?php echo $row["Tema"]; ?></td>
+                                <td><?php echo $row["Estatus"]; ?></td>
+                                <td><?php echo $row["Atendida"]; ?></td>
+                                <td><?php echo $row["Observacion"]; ?></td>
+                                <td><?php echo $row["Video"]; ?></td>
                             </tr>
-                        <?php
-                        while($row = mysqli_fetch_array($id1))
-                            {
-                            ?>
-                                <tr>
-                                    <td><?php echo $row["Nombre"]; ?></td>
-                                    <td><?php echo $row["Tema"]; ?></td>
-                                    <td><?php echo $row["Estatus"]; ?></td>
-                                    <td><?php echo $row["Atendida"]; ?></td>
-                                    <td><?php echo $row["Observacion"]; ?></td>
-                                    <td><?php echo $row["Video"]; ?></td>
-                                </tr>
-                        <?php
-                            }
-                        ?>
+                    <?php
+                        }
+                    ?>
+                </table>
             </div>
-        </div>            
+        </div>       
         <div id="footer">
             <p>Copyright@2022 Equipo 5 2CV11 | R Todos los derechos reservados</p>
         </div>
