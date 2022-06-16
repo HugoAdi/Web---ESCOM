@@ -4,7 +4,7 @@
         <title>Actualizacion de perfil</title>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="./recursos/aluindex2.css">
+        <link rel="stylesheet" type="text/css" href="./recursos/aluindex.css">
         <link rel="stylesheet" type="text/css" href="./recursos/navAlumno.css">
         <link rel="stylesheet" type="text/css" href="./recursos/aluheader.css">
 	    <link rel="stylesheet" type="text/css" href="../reloj.css">
