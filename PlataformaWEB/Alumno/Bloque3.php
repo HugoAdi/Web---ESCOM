@@ -74,6 +74,9 @@
                 </ul>
             </nav> 
         </div>
+		<?php
+			include("conexion.php");
+		    ?>
         <div id="contenido">
             <div id="section">
                 <div id="articulo">
