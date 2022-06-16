@@ -92,10 +92,11 @@
                         <li><a href = '#'>Gestionar temas</a>
                             <ul>
                                 <li><a href = "">Bloque 3</a>
-                                    <ul>
-                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarTemas.html">Actividad</a></li>
-                                        <li><a href = "">Video</a></li>
-                                        <li><a href = "">Evaluacion</a></li>
+                                <ul>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarActividad.php">Actividad</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarVideo.php">Video</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarEvaluacion.php">Evaluacion</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarImpresion.php">Material impreso</a></li>
                                     </ul> 
                                 </li>
                             </ul> 

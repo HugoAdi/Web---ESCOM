@@ -9,6 +9,7 @@
         </style>
     </head>
     <script>
+        
         function actual() {
             fecha=new Date(); 
             hora=fecha.getHours();
@@ -49,10 +50,11 @@
                         <li><a href = '#'>Gestionar temas</a>
                             <ul>
                                 <li><a href = "">Bloque 3</a>
-                                    <ul>
-                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarTemas.html">Actividad</a></li>
-                                        <li><a href = "">Video</a></li>
-                                        <li><a href = "">Evaluacion</a></li>
+                                <ul>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarActividad.php">Actividad</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarVideo.php">Video</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarEvaluacion.php">Evaluacion</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarImpresion.php">Material impreso</a></li>
                                     </ul> 
                                 </li>
                             </ul> 
@@ -112,10 +114,10 @@
                         </table>
                     </div>
                         <button class="button" style="margin-right: 120px">Confirmar usuario</button>
-                        <button class="button"><a style="color:white;" href="/Administrador/AdminAgregarUsuario.php">Agregar</a></button>
-                        <button class="button"><a style="color:white;" href="/Administrador/AdminEliminarUsuario.php">Eliminar</a></button>
-                        <button class="button"><a style="color:white;" href="/Administrador/AdminGestionarUsuario.php">Consultar</a></button>
-                        <button class="button"><a style="color:white;" href="/Administrador/AdminModificarUsuario.php">Modificar</a></button>
+                        <button class="button"><a style="color:white;" href="/PlataformaWeb/Administrador/AdminAgregarUsuario.php">Agregar</a></button>
+                        <button class="button"><a style="color:white;" href="/PlataformaWeb/Administrador/AdminEliminarUsuario.php">Eliminar</a></button>
+                        <button class="button"><a style="color:white;" href="/PlataformaWeb/Administrador/AdminGestionarUsuario.php">Consultar</a></button>
+                        <button class="button"><a style="color:white;" href="/PlataformaWeb/Administrador/AdminModificarUsuario.php">Modificar</a></button>
                         <button class="button">Imprimir pdf</button>
                 </div>
             </div>

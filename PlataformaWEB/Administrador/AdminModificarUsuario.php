@@ -52,6 +52,40 @@
         include("conexion.php");
     ?>
     <script>
+        function curpValida(curp) {
+            var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
+            validado = curp.match(re);
+            
+            if (!validado) 
+                return false;
+            function digitoVerificador(curp17) {
+                var diccionario  = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+                    lngSuma      = 0.0,
+                    lngDigito    = 0.0;
+                for(var i=0; i<17; i++)
+                    lngSuma = lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
+                lngDigito = 10 - lngSuma % 10;
+                if (lngDigito == 10) return 0;
+                return lngDigito;
+            }
+        
+            if (validado[2] != digitoVerificador(validado[1])) 
+                return false;
+                
+            return true; 
+        }
+
+
+        function validarInput(input) {
+            var curp = input.value.toUpperCase(),
+                resultado = document.getElementById("resultado"),
+                valido = "No válido";
+                
+            if (curpValida(curp)) { 
+                valido = "Válido";
+            } 
+            resultado.innerText = " CURP: " + valido +"\n";
+        }
         function actual() {
             fecha=new Date(); 
             hora=fecha.getHours();
@@ -92,10 +126,11 @@
                         <li><a href = '#'>Gestionar temas</a>
                             <ul>
                                 <li><a href = "">Bloque 3</a>
-                                    <ul>
-                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarTemas.html">Actividad</a></li>
-                                        <li><a href = "">Video</a></li>
-                                        <li><a href = "">Evaluacion</a></li>
+                                <ul>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarActividad.php">Actividad</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarVideo.php">Video</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarEvaluacion.php">Evaluacion</a></li>
+                                        <li><a href = "/PlataformaWeb/Administrador/AdminGestionarImpresion.php">Material impreso</a></li>
                                     </ul> 
                                 </li>
                             </ul> 
@@ -123,7 +158,8 @@
                             </div>
                             <div class="item1">
                                 <label for="fname">CURP</label>
-                                <input type="text" id="fname" name="CURP" placeholder="">
+                                <input oninput="validarInput(this)" type="text" id="fname" name="CURP" placeholder="">
+                                <pre id="resultado" style="color:red;"></pre>
                             </div>
                             <div class="item2">
                                 <label for="ltelefono">Telefono</label>

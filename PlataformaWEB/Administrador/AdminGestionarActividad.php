@@ -1,57 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Eliminar Usuario</title>
-        <link rel="stylesheet" type="text/css" href="./recursos/vistaAdministrador.css">
+        <title>Gestionar actividad</title>
+        <link rel="stylesheet" type="text/css" href="./recursos/AdminGestionarUsuario.css">
         <link rel="stylesheet" type="text/css" href="./recursos/navAdministrador.css">
         <link rel="stylesheet" type="text/css" href="./recursos/header.css">
         <link rel="stylesheet" type="text/css" href="reloj.css">
-        <style>
-            input,
-            select,
-            textarea {
-                width: 100%;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                margin-top: 6px;
-                margin-bottom: 16px;
-                resize: vertical;
-                grid-row: 1 / 2;
-            }
-    
-            input[type=submit] {
-                background-color: #04AA6D;
-                color: white;
-                margin-top: 26px;
-                padding: 12px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-    
-            input[type=submit]:hover {
-                background-color: #45a049;
-            }
-    
-            .container {
-                border-radius: 5px;
-                background-color: #f2f2f2;
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-gap: 10px;
-                padding: 10px;
-            }
-            form{
-                margin-top: 80px;
-                width: 70%;
-                height: 80%;
-            }
         </style>
     </head>
-    <?php
-        include("conexion.php");
-    ?>
     <script>
         function actual() {
             fecha=new Date(); 
@@ -79,8 +35,11 @@
     </script>
     <body>
         <div id="contenedor">
-        <div id="header">
-                <h1>INTERMATE PLATAFORMA EDUCATIVA</h1>
+            <div id="header">
+                <h1 style="width: 60%;position:absolute;">INTERMATE PLATAFORMA EDUCATIVA</h1>
+                <div id="reloj">
+                    00 : 00 : 00
+                </div>
             </div>
             <div id="navegacion">
                 <nav>
@@ -113,28 +72,44 @@
                 </nav> 
             </div>
             <div id="contenido">
-                <div class="section">
-                    <form action method="POST">
-                        <h2>Usuario a eliminar</h2>
-                        <div class="container">
-                            <div class="item1">
-                                <label for="fname">Usuario</label>
-                                <input type="text" id="fname" name="usuario" placeholder="El usuario a eliminar">
-                            </div>
-        
-                            <div class="item2">
-                                <input type="submit" value="Eliminar">
-                            </div>
-                        </div>
-                    </form>
+                <div id="articulo">
                     <?php
-                        if ($_POST) {
-                            //$id = $_POST['id'];
-                            $usuario = $_POST['usuario'];
-                            mysqli_query($conexion, "DELETE FROM usuario WHERE Nombre_usuario = '$usuario'");
-                            echo "<h2> Usuario eliminado </h2>";
-                        }
+                        include("conexion.php");
                     ?>
+                    <?php
+                        $id1 = mysqli_query($conexion, "SELECT * FROM material WHERE Tipo='Actividad'");
+                    ?>
+                    <div style="overflow-x: scroll; overflow-y: scroll; height: 80%;width:100%;margin-bottom: 20px;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Tema</th>
+                                    <th>Estatus</th>
+                                    <th>Atendida</th>
+                                    <th>Observacion</th>
+                                </tr>
+                                <?php
+                                while ($row = mysqli_fetch_array($id1)) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row["Id"]; ?></td>
+                                    <td><?php echo $row["Nombre"]; ?></td>
+                                    <td><?php echo $row["Tema"]; ?></td>
+                                    <td><?php echo $row["Estatus"]; ?></td>
+                                    <td><?php echo $row["Atendida"]; ?></td>
+                                    <td><?php echo $row["Observacion"]; ?></td>
+                                </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                        <button class="button" style="margin-right: 300px;"><a style="color:white;" href="/Administrador/AdminAgregarUsuario.php">Agregar</a></button>
+                        <button class="button"><a style="color:white;" href="/Administrador/AdminEliminarUsuario.php">Modificar</a></button>
+                        <button class="button"><a style="color:white;" href="/Administrador/AdminGestionarUsuario.php">Eliminar</a></button>
                 </div>
             </div>
             <div id="footer">
