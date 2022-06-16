@@ -99,7 +99,7 @@
                                 <td><?php echo $row["Estatus"]; ?></td>
                                 <td><?php echo $row["Atendida"]; ?></td>
                                 <td><?php echo $row["Observacion"]; ?></td>
-                                <td><?php echo $row["Actividad"]; ?></td>
+                                <td><?php echo $row["Archivo"]; ?></td>
                             </tr>
                     <?php
                         }
