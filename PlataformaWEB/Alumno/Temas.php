@@ -3,11 +3,11 @@
 <head>
         <title>Temas</title>
         <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="./recursos/aluindex.css">
         <link rel="stylesheet" type="text/css" href="./recursos/navAlumno.css">
         <link rel="stylesheet" type="text/css" href="./recursos/aluheader.css">
-    <link rel="stylesheet" type="text/css" href="../reloj.css">
+        <link rel="stylesheet" type="text/css" href="../reloj.css">
     </head>
 <script>
         function actual() {
@@ -41,6 +41,7 @@
                 <div id="reloj">
                     00 : 00 : 00
                 </div>
+            </div>
         </div>
         <div id="navegacion">
             <nav>
@@ -73,32 +74,33 @@
         </div>
         <div id="contenido">
             <div id="articulo">
-		    <?php
-                            error_reporting(0);
-                            include("conexion.php");
-                            $id=$_POST['id'];
-                            $id1=mysqli_query($conexion, "SELECT * FROM material WHERE Tema='5'");
-                        ?>
+                <?php
+                    error_reporting(0);
+                    include("conexion.php");
+                    $id=$_POST['id'];
+                    $id1=mysqli_query($conexion, "SELECT * FROM material WHERE Tema='5'");
+                ?>
                 <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
-                            <tr>
-                                <td>Ver</td>
-                                <td>Titulo</td>
-                                <td>Cuerpo</td>
-                                <td>Estatus</td>
-                            </tr>
-                        <?php
-                        while($row = mysqli_fetch_array($id1))
-                            {
-                            ?>
-                                <tr>
-                                    <td><?php echo $row["Id"]; ?></td>
-                                    <td><?php echo $row["Nombre"]; ?></td>
-                                    <td><?php echo $row["Archivo"]; ?></td>
-                                    <td><?php echo $row["Estatus"]; ?></td>
-                                </tr>
-                        <?php
-                            }
+                    <tr>
+                        <td>Ver</td>
+                        <td>Titulo</td>
+                        <td>Cuerpo</td>
+                        <td>Estatus</td>
+                    </tr>
+                    <?php
+                    while($row = mysqli_fetch_array($id1))
+                        {
                         ?>
+                            <tr>
+                                <td><?php echo $row["Id"]; ?></td>
+                                <td><?php echo $row["Nombre"]; ?></td>
+                                <td><?php echo $row["Archivo"]; ?></td>
+                                <td><?php echo $row["Estatus"]; ?></td>
+                            </tr>
+                    <?php
+                        }
+                    ?>
+                </table>
             </div>
         </div>
         <div id="footer">
