@@ -83,24 +83,31 @@
                             $id=$_POST['id'];
                             $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
                         ?>
-                <center><table border="5" cellpadding="0" width="700px" bgcolor="#C9C3FF" bordercolor="#380B61" cellspacing ="10">
-                    <tr align="center">
-                        <td colspan="4" bgcolor="#00F3FF"><h3>Actividades</h3></td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#3AFF3E" align="center">Nombre</td>
-                    </tr>
-			<?php
-        $direccion = '';
-        if ( $dir = opendir($direccion)) {
-            while ($archivo = readdir($dir)) {
-                   if ($archivo != '.' && $archivo != '..') {
-                       ?> <tr><td align="center"><a href="<?php echo $direccion.$archivo ?>"><?php echo $archivo; ?></a></td> </tr> <?php
-                   }
-               }   
-        }
-    ?>
-                </table>
+                <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
+                            <tr>
+                                <td>Id</td>
+                                <td>Nombre</td>
+                                <td>Tema</td>
+                                <td>Estatus</td>
+                                <td>Atendida</td>
+                                <td>Observacion</td>
+                            </tr>
+                        <?php
+                        while($row = mysqli_fetch_array($id1))
+                            {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["Id"]; ?></td>
+                                    <td><?php echo $row["Nombre"]; ?></td>
+                                    <td><?php echo $row["Tema"]; ?></td>
+                                    <td><?php echo $row["Estatus"]; ?></td>
+                                    <td><?php echo $row["Atendida"]; ?></td>
+                                    <td><?php echo $row["Observacion"]; ?></td>
+                                </tr>
+                        <?php
+                            }
+                        ?>
+                        </table>
             </div>
         </div>            
         <div id="footer">
