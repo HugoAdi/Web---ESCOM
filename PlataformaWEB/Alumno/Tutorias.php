@@ -84,11 +84,24 @@
                             $id1=mysqli_query($conexion, "SELECT * FROM grupo WHERE Profesor='6'");
                         ?>
                 <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
-                    <tr>
-                        <td>Hora</td>
-                        <td>Dia</td>
-                    </tr>
-                </table>
+                            <tr>
+                                <td>Alumno</td>
+                                <td>Hora</td>
+                                <td>Fecha</td>
+                            </tr>
+                        <?php
+                        while($row = mysqli_fetch_array($id1))
+                            {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["alumno"]; ?></td>
+                                    <td><?php echo $row["hora"]; ?></td>
+                                    <td><?php echo $row["fecha"]; ?></td>
+                                </tr>
+                        <?php
+                            }
+                        ?>
+                        </table>
             </div>
         </div>
         <div id="footer">
