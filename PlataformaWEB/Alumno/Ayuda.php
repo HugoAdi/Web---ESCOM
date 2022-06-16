@@ -74,6 +74,9 @@
                 </ul>
             </nav> 
         </div>
+		<?php
+			include("conexion.php");
+		    ?>
         <div id="contenido">
             <div id="articulo">
 		    <?php
@@ -84,14 +87,10 @@
                         ?>
                 <fieldset>
                     <legend><h3>Ayuda.</h3></legend>
-                    Esta aplicacion ayudara a los profesor@s para subir SUS materiales y poder insertar sus actividades para que l@s alumnos puedan realizar por medio
+                    Esta aplicacion ayudara a los profesor@s para subir sus materiales y poder insertar sus actividades para que l@s alumnos puedan realizar por medio
                     de formularios o juegos de dichas actividades
-                    <br></br>
-                    si se te olvida la contraseña deberas ingresar al enlace ubicado en la barra lateral derecha "se te olvido la contraseña", al ingresar se encuentra datos
-                    que te piden para poder restablecer la contraseña o solo indicas tu correo electronico y palabra secreta y con ello ya se le envia la clave actual, se recomienda cambiar su comtraseña despues de ello. :)
                     <br><br>
-                    <button class="boton1">buscar ayuda en especifico</button><br><br><br><br>
-                    <button class="boton2">cerrar ayuda</button>
+                    si no sabes como se resuelve un determinado problema pide una cita a tu profesor. :)
                 </fieldset>
             </div>
         </div>
