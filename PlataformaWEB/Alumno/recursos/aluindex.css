@@ -17,12 +17,15 @@ body {
 }
 
 #contenedor{
-    height: 1100px;
-    /* position: absolute; */
+    height: auto;
+    /*height: 1100px;
+    position: absolute; */
 }
 #contenido{
-    height: 800px;
-    margin-top: 2em;
+    height: auto;
+    position: relative;
+    /*height: 800px;
+    margin-top: 2em;*/
 }
 
 #articulo {
