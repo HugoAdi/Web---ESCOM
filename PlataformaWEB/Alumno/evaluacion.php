@@ -74,36 +74,37 @@
         </div>
         <div id="contenido">
             <div id="articulo">
-		        <?php
-                            error_reporting(0);
-                            include("conexion.php");
-                            $id=$_POST['id'];
-                            $id1=mysqli_query($conexion, "SELECT * FROM material WHERE Tipo='Evaluacion'");
+                <?php
+                    error_reporting(0);
+                    include("conexion.php");
+                    $id=$_POST['id'];
+                    $id1=mysqli_query($conexion, "SELECT * FROM material WHERE Tipo='Evaluacion'");
+                ?>
+                <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Tema</td>
+                        <td>Estatus</td>
+                        <td>Atendida</td>
+                        <td>Observacion</td>
+                        <td>Ver</td>
+                    </tr>
+                    <?php
+                    while($row = mysqli_fetch_array($id1))
+                        {
                         ?>
-                        <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
                             <tr>
-                                <td>Nombre</td>
-                                <td>Tema</td>
-                                <td>Estatus</td>
-                                <td>Atendida</td>
-                                <td>Observacion</td>
-                                <td>Ver</td>
+                                <td><?php echo $row["Nombre"]; ?></td>
+                                <td><?php echo $row["Tema"]; ?></td>
+                                <td><?php echo $row["Estatus"]; ?></td>
+                                <td><?php echo $row["Atendida"]; ?></td>
+                                <td><?php echo $row["Observacion"]; ?></td>
+                                <td><?php echo $row["Actividad"]; ?></td>
                             </tr>
-                        <?php
-                        while($row = mysqli_fetch_array($id1))
-                            {
-                            ?>
-                                <tr>
-                                    <td><?php echo $row["Nombre"]; ?></td>
-                                    <td><?php echo $row["Tema"]; ?></td>
-                                    <td><?php echo $row["Estatus"]; ?></td>
-                                    <td><?php echo $row["Atendida"]; ?></td>
-                                    <td><?php echo $row["Observacion"]; ?></td>
-                                    <td><?php echo $row["Actividad"]; ?></td>
-                                </tr>
-                        <?php
-                            }
-                        ?>
+                    <?php
+                        }
+                    ?>
+                </table>
             </div>
         </div>            
         <div id="footer">
