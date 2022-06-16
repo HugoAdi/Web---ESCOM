@@ -34,6 +34,9 @@
         }
         setInterval(actualizar,1000);
     </script>
+	<?php
+        include("conexion.php");
+    ?>
     <body onload="validar_sesione()">
     <?php
         $conexion = mysqli_connect('localhost','root','','proyecto') or die ("f");
