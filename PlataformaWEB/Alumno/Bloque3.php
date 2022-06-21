@@ -87,20 +87,21 @@
                         <td>Atendida</td>
                         <td>Observacion</td>
                     </tr>
-                <?php
-                while($row = mysqli_fetch_array($id1))
-                    {
+                    <?php
+                    while($row = mysqli_fetch_array($id1))
+                        {
+                        ?>
+                            <tr>
+                                <td><?php echo $row["Nombre"]; ?></td>
+                                <td><?php echo $row["Tema"]; ?></td>
+                                <td><?php echo $row["Estatus"]; ?></td>
+                                <td><?php echo $row["Atendida"]; ?></td>
+                                <td><?php echo $row["Observacion"]; ?></td>
+                            </tr>
+                    <?php
+                        }
                     ?>
-                        <tr>
-                            <td><?php echo $row["Nombre"]; ?></td>
-                            <td><?php echo $row["Tema"]; ?></td>
-                            <td><?php echo $row["Estatus"]; ?></td>
-                            <td><?php echo $row["Atendida"]; ?></td>
-                            <td><?php echo $row["Observacion"]; ?></td>
-                        </tr>
-                <?php
-                    }
-                ?>
+                </table>
             </div>
         </div>
         <div id="footer">
