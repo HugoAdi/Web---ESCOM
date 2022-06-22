@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2022 a las 08:53:19
+-- Tiempo de generación: 22-06-2022 a las 20:34:41
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Versión de PHP: 8.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,9 @@ INSERT INTO `agenda` (`Id`, `hora`, `fecha`, `alumno`, `profesor`) VALUES
 (1, '18:00:00', '2022-06-15', 2, 6),
 (2, '11:00:00', '2022-06-19', 1, 6),
 (3, '14:30:00', '2022-06-30', 7, 6),
-(5, '08:00:00', '2022-06-25', 1, 6);
+(5, '08:00:00', '2022-06-25', 1, 6),
+(6, '07:30:00', '2022-06-12', 8, 6),
+(7, '15:00:00', '2022-06-30', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -69,7 +71,8 @@ INSERT INTO `agenda` (`Id`, `hora`, `fecha`, `alumno`, `profesor`) VALUES
 
 CREATE TABLE `alumno` (
   `Id` int(10) NOT NULL,
-  `Progreso` decimal(10,0) NOT NULL,
+  `Nombre` text NOT NULL,
+  `Progreso` text NOT NULL,
   `Tutor` varchar(11) NOT NULL,
   `Boleta` int(11) NOT NULL,
   `Id_Grupo` int(11) NOT NULL,
@@ -82,11 +85,11 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`Id`, `Progreso`, `Tutor`, `Boleta`, `Id_Grupo`, `Id_Bloque`, `Id_Actividad`, `Id_Material`) VALUES
-(1, '7', 'Prueba', 2020957395, 2, 0, 0, 0),
-(2, '9', 'Prueba', 2020938475, 2, 0, 0, 0),
-(7, '5', 'Prueba', 2018532514, 4, 0, 0, 0),
-(8, '0', 'Prueba', 2147483647, 4, 0, 0, 0);
+INSERT INTO `alumno` (`Id`, `Nombre`, `Progreso`, `Tutor`, `Boleta`, `Id_Grupo`, `Id_Bloque`, `Id_Actividad`, `Id_Material`) VALUES
+(1, 'Maria Fe', 'Finalizado', 'Prueba', 2020957395, 2, 0, 0, 0),
+(2, 'Memo Carzo', 'Sin Finalizar', 'Prueba', 2020938475, 2, 0, 0, 0),
+(7, 'Pedro Perez', 'Finalizado', 'Prueba', 2018532514, 4, 0, 0, 0),
+(8, 'Elba Neado', 'Sin Finalizar', 'Prueba', 2147483647, 4, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -190,7 +193,7 @@ CREATE TABLE `soporte` (
 --
 
 INSERT INTO `soporte` (`id`, `tema`, `correo_principal`, `detalle`, `atendida`, `observacion`) VALUES
-(0, 'Matematicas', 'ejemplo@hotmail.com', 'Hay una duda', 'No', 'Esta dificil la duda');
+(1, 'Matematicas', 'ejemplo@hotmail.com', 'Hay una duda', 'No', 'Esta dificil la duda');
 
 -- --------------------------------------------------------
 
@@ -217,8 +220,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`Id`, `Nombre`, `Nombre_usuario`, `tipo_usuario`, `Contraseña`, `Telefono`, `CURP`, `Correo_electronico`, `Correo_electronico_alterno`) VALUES
 (1, 'Maria Fe', 'Raven', 'alumno', 'raven123', 717295135, '453252352', 'hola@prueba.com', 'hola2@prueba2.com'),
 (2, 'Memo Carzo', 'Raven', 'alumno', 'raven123', 556182930, '453252352', 'prueba@gmail.com', 'hola2@prueba2.com'),
-(3, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'vdgvgf@gmail.com', 'dhbfdhsbf@gmail.com'),
-(4, 'AJAJAJ', 'JAJAJAJ', 'Administrador', 'JAJAJAJA', 54252, 'JAJAJAJA', 'djbfh@gmail.com', 'dhbfhbsf@gmail.com'),
+(3, 'AJAJAJ', 'JAJAJAJ', 'Administrador', '1234', 54252, 'JAJAJAJA', 'vdgvgf@gmail.com', 'dhbfdhsbf@gmail.com'),
+(4, 'AJAJAJ', 'JAJAJAJ', 'Administrador', '1234', 54252, 'JAJAJAJA', 'djbfh@gmail.com', 'dhbfhbsf@gmail.com'),
 (5, 'Hugo Adi Jimenez Martinez', '83838', 'profesor', '123', 381581835, 'ufsdjsfdj', 'hggug@gmail.com', 'gjsgjsj@gmail.com'),
 (6, 'Prueba', 'hola', 'profesor', '123', 551845289, 'iaiai', 'prueba@gmail.com', 'gsgsg@gmail.com'),
 (7, 'Pedro Perez', 'aja', 'alumno', '123', 54525, 'abduzcan', 'alumno@gmail.com', 'algsfdg@gmail.com'),
@@ -298,7 +301,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo`
@@ -311,6 +314,12 @@ ALTER TABLE `grupo`
 --
 ALTER TABLE `material`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `soporte`
+--
+ALTER TABLE `soporte`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
