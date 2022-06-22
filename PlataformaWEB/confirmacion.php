@@ -12,11 +12,12 @@
             }else{
 				session_start();
 				$_SESSION['arc1']=$usur;
+				$_SESSION['arc2']=$cont;
 				if($tpu=="profesor"){
 					echo "<meta http-equiv='refresh' content='0; url=Profesor/vistaProfesor.html'>";
 				}
 				else if($tpu=="administrador"){
-					echo "<meta http-equiv='refresh' content='0; url=Administrador/AdminGestionarUsuario.php'>";
+					echo "<meta http-equiv='refresh' content='0; url=Administrador/vistaAdministrador.html'>";
 				}
 				else if($tpu=="alumno"){
 					echo "<meta http-equiv='refresh' content='0; url=Alumno/Alumno.html'>";
